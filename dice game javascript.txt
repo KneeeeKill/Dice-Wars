@@ -1,0 +1,32 @@
+const numAttackMax = 2;
+const numDefenseMax = 2;
+
+function randGen (){
+    var randomNumber1 = Math.floor(Math.random()*6) +1 ;
+    return randomNumber1;
+ }
+
+ function roll(){}
+ 
+ var int1 = randGen();
+ var int2= randGen();
+ var x1= "./images/dice"+int1+".png";
+ var x2= "./images/dice"+int2+".png";
+
+ document.querySelector(".img1").setAttribute("src",x1);
+ document.querySelector(".img2").setAttribute("src",x2);
+
+ if (int1>int2){
+    document.querySelector("h2").textContent="Player 1 wins!";
+ }
+ else if(int1===int2){
+    document.querySelector("h2").textContent="It's a Draw!";
+ }
+ else{
+    document.querySelector("h2").textContent="Player 2 win!";
+ }
+
+ document.getElementByClass("btn").addEventListener("click", roll);
+
+
+
